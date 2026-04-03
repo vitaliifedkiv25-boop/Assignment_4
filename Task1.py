@@ -5,6 +5,6 @@ def evaluate_polynomial(poly_dict, x):
         result += k * (x ** p)
     return result
 result1 = evaluate_polynomial(my_poly,2)
-print(result1)
+print(f"Результат обчислення полінома для х = 2: {result1}")
 result2 = evaluate_polynomial(my_poly,-1.5)
-print(result2)
+print(f"Результат обчислення полінома для х = -1.5: {result2}")
