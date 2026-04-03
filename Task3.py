@@ -10,7 +10,8 @@ def analyze_methods(data):
     report = {}
     for i in data:
         name = i["method"]
-        error = i["error"]
+        if name not in report:
+            report[name] = { "max_error": i["error"], "total_time_ms": 0.0, "iteration_count": 0}
         if report[name]["max_error"] < i["error"]:
             report[name]["max_error"] = i["error"]
         report[name]["total_time_ms"] += i["time_ms"]
