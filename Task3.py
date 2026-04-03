@@ -8,13 +8,13 @@ experiments_data = [
 ]
 def analyze_methods(data):
     report = {}
-    for i in data:
-        name = i["method"]
+    for entry in data:
+        name = entry["method"]
         if name not in report:
-            report[name] = { "max_error": i["error"], "total_time_ms": 0.0, "iteration_count": 0}
-        if report[name]["max_error"] < i["error"]:
-            report[name]["max_error"] = i["error"]
-        report[name]["total_time_ms"] += i["time_ms"]
+            report[name] = { "max_error": entry["error"], "total_time_ms": 0.0, "iteration_count": 0}
+        if report[name]["max_error"] < entry["error"]:
+            report[name]["max_error"] = entry["error"]
+        report[name]["total_time_ms"] += entry["time_ms"]
         report[name]["iteration_count"] += 1
     return report
 print(analyze_methods(experiments_data))
