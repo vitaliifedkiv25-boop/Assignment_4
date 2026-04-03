@@ -10,7 +10,7 @@ def get_successful_students(students_list, passing_score=60):
         name = student["name"]
         scores = student["scores"].values()
         if min(scores) >= passing_score:
-            average = sum(scores) / len(scores)
+            average = round(sum(scores) / len(scores), 2)
             successful_student[student["name"]] = average
     return successful_student
 print(get_successful_students(students_math_results))
